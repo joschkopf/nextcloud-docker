@@ -33,7 +33,8 @@ jobs:
       - name: Build the Docker image
         run: |
           # Baue das Docker-Image unter Verwendung des Dockerfiles im "docker/"-Verzeichnis
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/nextcloud:${{ github.sha }} -f .examples/dockerfiles/full/apache/Dockerfile .
+          cd .examples/dockerfiles/full/apache
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/nextcloud:${{ github.sha }} .
 
       # Step 5: Push Docker image to Docker Hub
       - name: Push Docker image to Docker Hub
