@@ -3,10 +3,11 @@ name: Build and Push Docker Image to Docker Hub
 on:
   push:
     branches:
-      - main  # Ändere dies, wenn du einen anderen Branch verwenden möchtest
+      - master  # Ändere dies, wenn du einen anderen Branch verwenden möchtest
   # Optional: Trigger auch bei Tag-Erstellung
   # tags:
   #   - 'v*'
+  workflow_dispatch:  # Manuelle Auslösung des Workflows
 
 jobs:
   build:
